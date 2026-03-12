@@ -1,845 +1,631 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mark Goertz — Software Engineer & AI Researcher. Building intelligent systems that turn complex data into actionable insight."
+    />
+    <title>Mark Goertz — Software Engineer & AI Researcher</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mark Goertz Portfolio</title>
+    <link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <body>
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
+    <!-- Deep space cosmos canvas (fixed background) -->
+    <canvas id="cosmos-canvas" aria-hidden="true"></canvas>
 
-<body>
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <!--
-    - #MAIN
-  -->
+    <!-- Fixed top navigation -->
+    <header class="site-header" id="siteHeader">
+      <div class="header-inner">
+        <a href="#hero" class="header-brand">MG</a>
 
-  <main>
+        <nav class="header-nav" id="headerNav" aria-label="Main navigation">
+          <a href="#hero"      class="nav-link active" data-nav="hero">Home</a>
+          <a href="#about"     class="nav-link"        data-nav="about">About</a>
+          <a href="#resume"    class="nav-link"        data-nav="resume">Resume</a>
+          <a href="#portfolio" class="nav-link"        data-nav="portfolio">Portfolio</a>
+          <a href="#contact"   class="nav-link"        data-nav="contact">Contact</a>
+        </nav>
 
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Mark Goertz</h1>
-
-          <p class="title">Student Master of Applied IT</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-
       </div>
+    </header>
 
-      <div class="sidebar-info_more">
+    <!-- Side section dots -->
+    <nav class="side-dots" id="sideDots" aria-label="Page sections">
+      <a href="#hero"      class="side-dot active" data-dot="hero"      aria-label="Go to Home section"></a>
+      <a href="#about"     class="side-dot"         data-dot="about"     aria-label="Go to About section"></a>
+      <a href="#resume"    class="side-dot"         data-dot="resume"    aria-label="Go to Resume section"></a>
+      <a href="#portfolio" class="side-dot"         data-dot="portfolio" aria-label="Go to Portfolio section"></a>
+      <a href="#contact"   class="side-dot"         data-dot="contact"   aria-label="Go to Contact section"></a>
+    </nav>
 
-        <div class="separator"></div>
+    <main>
 
-        <ul class="contacts-list">
+      <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+      <section id="hero" class="section hero-section" data-section="hero">
+        <div class="hero-content">
 
-          <li class="contact-item">
+          <figure class="hero-avatar">
+            <img src="./assets/images/my-avatar.png" alt="Mark Goertz" width="96" height="96" />
+          </figure>
 
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:mark.goertz@student.fontys.nl" class="contact-link">mark.goertz@student.fontys.nl</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-              <a class="contact-link">N/A</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">April 10, 2001</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Roermond, Limburg, the Netherlands</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://nl.linkedin.com/in/mark-goertz-1b86a61a2" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.instagram.com/mark_goertz/" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I am a Master's student in Applied IT and a graduated Software Engineer from the Netherlands, working in
-            artificial intelligence and data analytics. With a strong foundation in software development and a keen
-            interest in cutting-edge technologies, I am passionate about leveraging software and data to drive
-            innovation and solve complex problems.
+          <p class="hero-badge reveal-up">
+            <span class="status-dot is-available" aria-hidden="true"></span>
+            Open for conversations about AI.
           </p>
 
-          <p>
-            My academic journey has equipped me with a diverse skill set, including programming, data analysis, and
-            machine learning, enabling me to tackle real-world challenges with a strategic and analytical approach.
+          <h1 class="hero-name reveal-up stagger-1">
+            Mark<br /><span class="text-gradient">Goertz</span>
+          </h1>
+
+          <p class="hero-role reveal-up stagger-2">Software Engineer &amp; AI Researcher</p>
+
+          <p class="hero-tagline reveal-up stagger-3">
+            Building intelligent systems that turn complex data into actionable insight.
           </p>
-        </section>
 
+          <div class="hero-actions reveal-up stagger-4">
+            <a href="#portfolio" class="btn btn-primary">
+              <span>View My Work</span>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          </div>
 
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What I Do</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <!-- <img src="./assets/images/icon-research.svg" alt="Research icon" width="40"> -->
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Researching</h4>
-                <p class="service-item-text">
-                  Conducting in-depth research to understand challenges and identify innovative solutions in the field
-                  of artificial intelligence and data science.
-                </p>
-              </div>
-
+          <ul class="hero-socials reveal-up stagger-5">
+            <li>
+              <a
+                href="https://nl.linkedin.com/in/mark-goertz-1b86a61a2"
+                class="social-btn"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
             </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="Design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Designing Software</h4>
-                <p class="service-item-text">
-                  Crafting intuitive and effective software designs that meet user needs and address specific problems
-                  through thoughtful planning and prototyping.
-                </p>
-              </div>
-
+            <li>
+              <a
+                href="https://github.com/markgoertz"
+                class="social-btn"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
             </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Building Software</h4>
-                <p class="service-item-text">
-                  Developing and implementing high-quality software solutions, transforming designs into functional
-                  applications with best practices in coding and testing.
-                </p>
-              </div>
-
+            <li>
+              <a
+                href="https://www.instagram.com/mark_goertz/"
+                class="social-btn"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
             </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <!-- <img src="./assets/images/icon-collaborate.svg" alt="Collaborate icon" width="40"> -->
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Collaborating</h4>
-                <p class="service-item-text">
-                  Working with clients and team members to ensure project success through clear communication, feedback,
-                  and collaborative problem-solving.
-                </p>
-              </div>
-
-            </li>
-
           </ul>
-
-        </section>
-
-
-
-        <!--
-          - testimonials
-        -->
-
-        <!-- <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Lorem Ipsum</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit veniam, deserunt corporis quos ducimus eos odio eius voluptatum harum dicta. Veritatis iure qui molestiae ad dicta! Temporibus suscipit enim sunt?
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Lorem Ipsum</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem vero aut animi ducimus illum beatae nulla quasi quaerat modi molestiae, vel, nostrum, sapiente voluptas. Rem beatae veritatis nostrum labore qui!
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section> -->
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Lorem Ipsum</h4>
-
-              <time datetime="2021-06-14"></time>
-
-              <div data-modal-text>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, eveniet possimus perspiciatis
-                  quibusdam consectetur, corrupti officiis earum incidunt quam repellendus saepe ad ullam deserunt
-                  provident eligendi optio nesciunt suscipit reprehenderit.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
 
         </div>
 
+        <div class="scroll-cue" aria-hidden="true">
+          <span>Scroll to explore</span>
+          <div class="scroll-cue-line"></div>
+        </div>
+      </section>
 
-        <!--
-          - clients
-        -->
+      <!-- ═══════════════════════════ ABOUT ══════════════════════════ -->
+      <section id="about" class="section about-section" data-section="about">
+        <div class="container">
 
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Companies I've Worked With</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="https://www.fontys.nl/">
-                <img src="./assets/images/fontys.png" alt="client logo" style="border-radius: 14px;">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://www.stream-group.nl/">
-                <img src="./assets/images/stream-group.png" alt="client logo" style="border-radius: 14px;">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://www.gilde-bt.nl/">
-                <img src="./assets/images/gilde-bt.png" alt="client logo" style="border-radius: 14px;">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="index.html" class="card">
-                <img src="./assets/images/white.jpg" alt="client logo" style="border-radius: 14px;" class="card-image">
-                <p class="card-text">Let's Connect!</p>
-              </a>
-            </li>
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
+          <div class="section-header reveal-up">
+            <span class="section-eyebrow">Who I Am</span>
+            <h2 class="section-title">About</h2>
           </div>
 
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h3 class="h3 timeline-item-title">Master of Applied IT, MSc</h4>
-                <span>2024—future</span>
-
-                <p class="timeline-text">
-                  Pursuing a Master of Applied IT, focusing on advanced topics in artificial intelligence, data science,
-                  and software development. Aiming to deepen my expertise and research capabilities in cutting-edge IT
-                  solutions.
-                </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Software Engineering, BSc</h4>
-
-              <span>2019—2024</span>
-
-              <p class="timeline-text">
-                Graduated with a Bachelor's degree in Software Engineering. Acquired extensive knowledge in programming,
-                software design, and project management. Completed various projects, including a project on developing a
-                scalable web application.
+          <div class="about-grid">
+            <div class="about-bio reveal-up">
+              <p class="about-kicker">Professional Profile</p>
+              <h3 class="about-heading">
+                Engineer first.<br />Research-driven.<br />Outcome focused.
+              </h3>
+              <p class="about-text">
+                I’m passionate about creating practical software solutions that make a meaningful difference. 
+                Whether building complex systems or working with cutting-edge AI and cloud technologies, I thrive on tackling challenges—and value working with teams that strive for excellence, growth, and real-world results.
               </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Minor Entrepreneurship</h4>
-
-              <span>2023</span>
-
-              <p class="timeline-text">
-                Completed a minor in Entrepreneurship, learning about business planning, startup management, and
-                innovation strategies. Developed a business plan for a startup as a part of the curriculum.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">HAVO Physics and Health sciences</h4>
-
-              <span>2015-2019</span>
-
-              <p class="timeline-text">
-                Completed secondary education with a focus on Physics and Health. Gained foundational knowledge in
-                science, mathematics, and health sciences, preparing for higher education in technology and engineering.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Fontys | Student Applied Researcher Internship</h4>
-
-              <span>2024 — 2025</span>
-
-              <p class="timeline-text">
-                Engaged in an applied research internship, focusing on artificial intelligence, data analytics, and
-                infrastructure in a Smart Stress Wearables project. Contributed to research projects, conducted
-                experiments, and analysed data to support innovative IT solutions.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Gilde-BT | Software Graduation Internship</h4>
-
-              <span>2023 — 2024</span>
-
-              <p class="timeline-text">
-              <p class="timeline-text">
-                Completed a software engineering graduation internship, where I developed a hybrid ETL-pipeline with
-                Azure Data Factory and Azure Serverless Functions to automate data transfer to customers, from several
-                on-premises databases and existing framework as part of my final project. Collaborated with a team of
-                developers and gained hands-on experience in the software development lifecycle.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Stream Group | Software Internship</h4>
-
-              <span>2022</span>
-
-              <p class="timeline-text">
-                Participated in a software development internship, working on a server monitoring project with Grafana
-                and InfluxDb. Gaining practical experience in coding, debugging, and software development. Enhanced my
-                skills in various programming languages and development tools.
-              </p>
-
-            </li>
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Research</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Design</h5>
-                <data value="70">70%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Communication</h5>
-                <data value="85">85%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 85%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Development</h5>
-                <data value="85">85%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 85%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Project Management</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-            </li>
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <section class="portfolio-section">
-        <article class="portfolio" data-page="portfolio">
-
-          <header>
-            <h2 class="h2 article-title">Portfolio</h2>
-          </header>
-
-          <section class="projects">
-
-            <!-- Filter Buttons -->
-            <ul class="filter-list">
-              <li class="filter-item">
-                <button class="active" data-filter-btn>All</button>
-              </li>
-              <li class="filter-item">
-                <button data-filter-btn>Software</button>
-              </li>
-              <li class="filter-item">
-                <button data-filter-btn>AI</button>
-              </li>
-              <li class="filter-item">
-                <button data-filter-btn>Other</button>
-              </li>
-            </ul>
-
-            <!-- Custom Select Box -->
-            <div class="filter-select-box">
-              <button class="filter-select" data-select>
-                <div class="select-value" data-selecct-value>Select category</div>
-                <div class="select-icon">
-                  <ion-icon name="chevron-down"></ion-icon>
-                </div>
-              </button>
-              <ul class="select-list">
-                <li class="select-item">
-                  <button data-select-item>All</button>
+              <ul class="about-details">
+                <li>
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <a href="mailto:mark.goertz@icloud.com">mark.goertz@icloud.com</a>
                 </li>
-                <li class="select-item">
-                  <button data-select-item>Software</button>
-                </li>
-                <li class="select-item">
-                  <button data-select-item>AI</button>
-                </li>
-                <li class="select-item">
-                  <button data-select-item>Other</button>
+                <li>
+                  <ion-icon name="location-outline"></ion-icon>
+                  <address>From the Netherlands 🇳🇱</address>
                 </li>
               </ul>
             </div>
 
-            <!-- Project List -->
-            <!-- <ul class="project-list"> -->
-
-              <!-- Project Item 1 -->
-              <!-- <li class="project-item active" data-filter-item data-category="Software">
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img src="./assets/images/project-1.jpg" alt="Software" loading="lazy">
-                  </figure>
-                  <h3 class="project-title">Software</h3>
-                  <p class="project-category">Web development</p>
-                </a>
-              </li> -->
-
-<!--       
-
-            </ul> -->
-
-          </section>
-
-          <!-- Modal Container for Projects -->
-          <div class="modal-project-container" data-project-modal-container>
-
-            <div class="overlay" data-project-modal-overlay></div>
-
-            <section class="testimonials-project-modal">
-
-              <button class="modal-close-btn" data-project-modal-close-btn>
-                <ion-icon name="close-outline"></ion-icon>
-              </button>
-
-              <div class="modal-img-wrapper">
-                <figure class="modal-project-box">
-                  <img src="" alt="Project Image" data-project-modal-img>
-                </figure>
+            <div class="about-metrics reveal-scale stagger-1">
+              <div class="metric-card">
+                <span class="metric-value">5+</span>
+                <span class="metric-label">Years in technology</span>
               </div>
-
-              <div class="modal-content">
-                <h4 class="h3 modal-title" data-project-modal-title></h4>
-                <p data-project-modal-category></p>
-                <p data-project-modal-text></p>
+              <div class="metric-card">
+                <span class="metric-value">3+</span>
+                <span class="metric-label">Organizations supported</span>
               </div>
+              <div class="metric-card">
+                <span class="metric-value">MSc</span>
+                <span class="metric-label">Applied IT</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-value">BSc</span>
+                <span class="metric-label">Software Engineering</span>
+              </div>
+            </div>
+          </div>
 
-            </section>
+          <div class="about-principles reveal-up">
+            <h3 class="subsection-title">How I Work</h3>
+            <p class="subsection-text">
+              I take a hands-on, iterative approach to problem solving—learning by building, continuously refining through feedback, and focusing on effective communication. My aim is to create clear, robust solutions without unnecessary complexity.
+            </p>
+            <div class="principles-grid">
+              <div class="principle-card glass-card">
+                <div class="principle-icon"><ion-icon name="rocket-outline"></ion-icon></div>
+                <h4>Build Fast, Learn Faster</h4>
+                <p>I believe in rapid prototyping and early experimentation to drive insight and share progress efficiently.</p>
+              </div>
+              <div class="principle-card glass-card">
+                <div class="principle-icon"><ion-icon name="layers-outline"></ion-icon></div>
+                <h4>Foundations Matter</h4>
+                <p>I strive to understand core principles—ensuring solutions are well-grounded and avoiding unnecessary complexity.</p>
+              </div>
+              <div class="principle-card glass-card">
+                <div class="principle-icon"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></div>
+                <h4>Ask, Share, Improve</h4>
+                <p>I value collaboration, seek constructive feedback, and enjoy working with others to continuously enhance projects.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tech-section reveal-up">
+            <div class="tech-glow-ring" aria-hidden="true"></div>
+            <h3 class="subsection-title">Skills I Can Use</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Agentic AI</span>
+              <span class="tech-tag">Generative AI</span>
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Azure Data Factory</span>
+              <span class="tech-tag">Grafana</span>
+              <span class="tech-tag">InfluxDB</span>
+              <span class="tech-tag">Machine Learning</span>
+            </div>
+          </div>
+
+          <div class="impact-section reveal-up">
+            <h3 class="subsection-title">Selected Impact</h3>
+            <ul class="impact-list">
+              <li class="impact-item glass-card">
+                Designed and delivered a hybrid ETL platform on Azure that reduced manual
+                processing and improved reporting turnaround.
+              </li>
+              <li class="impact-item glass-card">
+                Built real-time monitoring foundations for production systems, giving operations
+                teams immediate infrastructure visibility.
+              </li>
+              <li class="impact-item glass-card">
+                Contributed to applied AI research for wearable stress detection, including
+                data pipeline design and model experiments.
+              </li>
+            </ul>
+          </div>
+
+          <div class="clients-section reveal-up">
+            <h3 class="subsection-title">Organizations I Worked With</h3>
+            <div class="clients-grid">
+              <a href="https://www.fontys.nl/" class="client-item" aria-label="Fontys University" target="_blank" rel="noopener">
+                <img src="./assets/images/clients/fontys.png" alt="Fontys University logo" width="80" height="40" style="object-fit:contain;display:block;background:#fff;border-radius:7px;box-shadow:0 1px 3px #0001;" onerror="this.onerror=null;this.style.background='#eee';this.style.display='inline-block';this.style.textAlign='center';this.style.lineHeight='40px';this.style.fontSize='14px';this.style.color='#333';this.style.border='1px solid #ddd';this.style.content='Fontys';this.src='';this.alt='Fontys';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=&quot;padding:0 10px;&quot;>Fontys</span>';">
+              </a>
+              <a href="https://www.stream-group.nl/" class="client-item" aria-label="Stream Group" target="_blank" rel="noopener">
+                <img src="./assets/images/clients/stream-group.png" alt="Stream Group logo" width="80" height="40" style="object-fit:contain;display:block;background:#fff;border-radius:7px;box-shadow:0 1px 3px #0001;" onerror="this.onerror=null;this.style.background='#eee';this.style.display='inline-block';this.style.textAlign='center';this.style.lineHeight='40px';this.style.fontSize='14px';this.style.color='#333';this.style.border='1px solid #ddd';this.style.content='Stream Group';this.src='';this.alt='Stream Group';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=&quot;padding:0 10px;&quot;>Stream Group</span>';">
+              </a>
+              <a href="https://www.gilde-bt.nl/" class="client-item" aria-label="Gilde-BT" target="_blank" rel="noopener">
+                <img src="./assets/images/clients/gilde-bt.png" alt="Gilde-BT logo" width="80" height="40" style="object-fit:contain;display:block;background:#fff;border-radius:7px;box-shadow:0 1px 3px #0001;" onerror="this.onerror=null;this.style.background='#eee';this.style.display='inline-block';this.style.textAlign='center';this.style.lineHeight='40px';this.style.fontSize='14px';this.style.color='#333';this.style.border='1px solid #ddd';this.style.content='Gilde-BT';this.src='';this.alt='Gilde-BT';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=&quot;padding:0 10px;&quot;>Gilde-BT</span>';">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════ RESUME ═════════════════════════ -->
+      <section id="resume" class="section resume-section" data-section="resume">
+        <div class="container">
+
+          <div class="section-header reveal-up">
+            <span class="section-eyebrow">My Journey</span>
+            <h2 class="section-title">Resume</h2>
+          </div>
+
+          <div class="resume-grid">
+
+            <!-- Education -->
+            <div class="timeline-block reveal-left">
+              <div class="timeline-header">
+                <div class="timeline-icon">
+                  <ion-icon name="school-outline"></ion-icon>
+                </div>
+                <h3 class="timeline-title">Education</h3>
+              </div>
+              <ol class="timeline">
+                <li class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content glass-card">
+                    <h4>Master of Applied IT, MSc</h4>
+                    <span class="timeline-date">2024 — 2025</span>
+                    <p>
+                      Researching AI-driven stress detection through wearable biosensors at
+                      Fontys University of Applied Sciences. Focus areas include machine learning
+                      pipelines, developing 1D-CNNs for stress detection, and validating the results.
+                    </p>
+                  </div>
+                </li>
+                <li class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content glass-card">
+                    <h4>Software Engineering, BSc</h4>
+                    <span class="timeline-date">2019 — 2024</span>
+                    <p>
+                      Graduated with a comprehensive foundation in software architecture, agile
+                      development, and cloud computing. Capstone project: a production-grade
+                      hybrid ETL pipeline on Azure serving multiple enterprise clients.
+                    </p>
+                  </div>
+                </li>
+                <li class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content glass-card">
+                    <h4>Minor in Entrepreneurship</h4>
+                    <span class="timeline-date">2023</span>
+                    <p>
+                      Developed a full business plan and go-to-market strategy for a tech
+                      startup, covering lean methodology, financial modelling, and investor pitching.
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <!-- Experience -->
+            <div class="timeline-block reveal-right">
+              <div class="timeline-header">
+                <div class="timeline-icon">
+                  <ion-icon name="briefcase-outline"></ion-icon>
+                </div>
+                <h3 class="timeline-title">Experience</h3>
+              </div>
+              <ol class="timeline">
+                <li class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content glass-card">
+                    <h4>iO Digital — AI/Software Engineer</h4>
+                    <span class="timeline-date">2025</span>
+                    <p>
+                        Develop AI and cloud-based solutions tailored to client needs, using a wide range of technologies across web development and data engineering. 
+                        Focus on building advanced Agentic AI products, such as search and voice agents, by leveraging platforms like OpenAI and Anthropic.
+                        Core technologies include Python, TypeScript, and React.
+                    </p>
+                  </div>
+                </li>
+                <li class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content glass-card">
+                    <h4>Fontys — Student Applied AI Researcher</h4>
+                    <span class="timeline-date">2024 — 2025</span>
+                    <p>
+                      Conducted data engineering for a Smart Stress Wearables project. Analyzed the data, trained classification models on biometric
+                      signals, and validated the results.
+                    </p>
+                  </div>
+                </li>
+                <li class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content glass-card">
+                    <h4>Gilde-BT — Software Engineer (Graduation)</h4>
+                    <span class="timeline-date">2023 — 2024</span>
+                    <p>
+                      Designed and shipped a hybrid ETL pipeline using Azure Data Factory and
+                      Serverless Functions, automating data transfer from on-premises databases
+                      to customer-facing dashboards. Reduced manual data handling by 90% and
+                      cut delivery time from days to minutes.
+                    </p>
+                  </div>
+                </li>
+                <li class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content glass-card">
+                    <h4>Stream Group — Software Engineer Intern</h4>
+                    <span class="timeline-date">2022</span>
+                    <p>
+                      Built a real-time server monitoring solution with Grafana and InfluxDB,
+                      giving the operations team immediate visibility into system health across
+                      50+ production nodes.
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </div>
 
           </div>
 
-        </article>
+      </section>
+
+      <!-- ═════════════════════════ PORTFOLIO ═════════════════════════ -->
+      <section id="portfolio" class="section portfolio-section" data-section="portfolio">
+        <div class="container">
+
+          <div class="section-header reveal-up">
+            <span class="section-eyebrow">My Work</span>
+            <h2 class="section-title">Portfolio</h2>
+          </div>
+
+          <p class="portfolio-intro reveal-up">
+            Selected project examples grouped by software engineering, AI, and applied research work.
+          </p>
+
+          <div class="filter-bar reveal-up">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="software">Software</button>
+            <button class="filter-btn" data-filter="ai">AI</button>
+            <button class="filter-btn" data-filter="other">Other</button>
+          </div>
+
+          <ul class="project-grid" id="projectGrid">
+            <li class="project-card reveal-up stagger-1" data-category="software">
+              <a href="#" class="project-card-link" data-project>
+                <figure class="project-img">
+                  <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="https://picsum.photos/seed/portfolio-stock-1/800/500" alt="Operations Dashboard" loading="lazy" />
+                </figure>
+                <div class="project-info">
+                  <h3 class="project-name">Operations Dashboard</h3>
+                  <p class="project-cat">Software</p>
+                </div>
+                <p class="project-desc" hidden>
+                  An operations dashboard with real-time telemetry, alerting, and KPI drill-down views.
+                </p>
+              </a>
+            </li>
+
+            <li class="project-card reveal-up stagger-2" data-category="ai">
+              <a href="#" class="project-card-link" data-project>
+                <figure class="project-img">
+                  <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="https://picsum.photos/seed/portfolio-stock-2/800/500" alt="Wearable Stress Classifier" loading="lazy" />
+                </figure>
+                <div class="project-info">
+                  <h3 class="project-name">Wearable Stress Classifier</h3>
+                  <p class="project-cat">AI</p>
+                </div>
+                <p class="project-desc" hidden>
+                  A wearable signal pipeline feeding a machine learning model for stress state classification.
+                </p>
+              </a>
+            </li>
+
+            <li class="project-card reveal-up stagger-3" data-category="software">
+              <a href="#" class="project-card-link" data-project>
+                <figure class="project-img">
+                  <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="https://picsum.photos/seed/portfolio-stock-3/800/500" alt="Hybrid ETL Platform" loading="lazy" />
+                </figure>
+                <div class="project-info">
+                  <h3 class="project-name">Hybrid ETL Platform</h3>
+                  <p class="project-cat">Software</p>
+                </div>
+                <p class="project-desc" hidden>
+                  An Azure-based ETL stack combining batch ingestion and serverless transformation workflows.
+                </p>
+              </a>
+            </li>
+
+            <li class="project-card reveal-up stagger-4" data-category="other">
+              <a href="#" class="project-card-link" data-project>
+                <figure class="project-img">
+                  <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="https://picsum.photos/seed/portfolio-stock-4/800/500" alt="Research Poster Series" loading="lazy" />
+                </figure>
+                <div class="project-info">
+                  <h3 class="project-name">Research Poster Series</h3>
+                  <p class="project-cat">Other</p>
+                </div>
+                <p class="project-desc" hidden>
+                  A publication-ready visual set for communicating experiment results and insights.
+                </p>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+        <!-- Project modal -->
+        <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+          <div class="modal-backdrop" id="modalBackdrop"></div>
+          <div class="modal-dialog glass-card">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <figure class="modal-img-wrap">
+              <img src="" alt="" id="modalImg" />
+            </figure>
+            <div class="modal-body">
+              <h3 id="modalTitle"></h3>
+              <p id="modalCat" class="modal-cat"></p>
+              <p id="modalDesc"></p>
+            </div>
+          </div>
+        </div>
 
       </section>
-      <!--
-        - #CONTACT
-      -->
 
-      <article class="contact" data-page="contact">
+      <!-- ═══════════════════════════ CONTACT ════════════════════════ -->
+      <section id="contact" class="section contact-section" data-section="contact">
+        <div class="container">
 
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
+          <div class="section-header reveal-up">
+            <span class="section-eyebrow">Say Hello</span>
+            <h2 class="section-title">Get in Touch</h2>
+          </div>
 
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24968.863470351923!2d6.004797015759905!3d51.19416958563501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c74b1285dcbf8f%3A0xbeb6d67c0b8d9d01!2sRoermond%2C%20Netherlands!5e0!3m2!1sen!2sus!4v1687853919180!5m2!1sen!2sus"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
+          <div class="contact-grid">
 
-        <section class="contact-form">
-          <h3 class="h3 form-title">Contact Form</h3>
+            <div class="contact-info reveal-left">
+              <p class="contact-intro">
+                Have a project that needs engineering muscle, a research collaboration in mind,
+                or just want to talk tech? I'd love to hear from you.
+              </p>
 
-          <form id="contact-form" class="form" data-form>
-            <div class="input-wrapper">
-              <input type="text" name="fullname" id="fullname" class="form-input" placeholder="Full name" required
-                data-form-input>
-              <input type="email" name="email" id="email" class="form-input" placeholder="Email address" required
-                data-form-input>
+              <ul class="contact-details">
+                <li>
+                  <div class="contact-icon"><ion-icon name="mail-outline"></ion-icon></div>
+                  <div>
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:mark.goertz@student.fontys.nl" class="contact-value">
+                      mark.goertz@student.fontys.nl
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="contact-icon"><ion-icon name="location-outline"></ion-icon></div>
+                  <div>
+                    <span class="contact-label">Location</span>
+                    <address class="contact-value">Roermond, Limburg, NL</address>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="contact-socials">
+                <a href="https://nl.linkedin.com/in/mark-goertz-1b86a61a2" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+                <a href="https://github.com/markgoertz" class="social-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                  <ion-icon name="logo-github"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/mark_goertz/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </div>
             </div>
 
-            <textarea name="message" id="message" class="form-input" placeholder="Your Message" required
-              data-form-input></textarea>
+            <div class="contact-form-wrap reveal-right">
+              <form id="contact-form" class="contact-form" data-form novalidate>
+                <div class="form-row">
+                  <div class="form-field">
+                    <input
+                      type="text"
+                      name="fullname"
+                      id="fullname"
+                      class="form-input"
+                      placeholder="Your name"
+                      required
+                      data-form-input
+                    />
+                  </div>
+                  <div class="form-field">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="form-input"
+                      placeholder="Your email"
+                      required
+                      data-form-input
+                    />
+                  </div>
+                </div>
 
-            <button id="submitBtn" class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-          </form>
-        </section>
+                <div class="form-field">
+                  <textarea
+                    name="message"
+                    id="message"
+                    class="form-input form-textarea"
+                    placeholder="Tell me about your project or idea..."
+                    required
+                    data-form-input
+                  ></textarea>
+                </div>
 
-      </article>
+                <button
+                  id="submitBtn"
+                  type="submit"
+                  class="btn btn-primary form-submit"
+                  disabled
+                  data-form-btn
+                >
+                  <ion-icon name="paper-plane"></ion-icon>
+                  <span>Send Message</span>
+                </button>
+              </form>
+            </div>
 
-    </div>
+          </div>
 
-  </main>
+          <div class="map-section reveal-up">
+            <figure class="map-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24968.863470351923!2d6.004797015759905!3d51.19416958563501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c74b1285dcbf8f%3A0xbeb6d67c0b8d9d01!2sRoermond%2C%20Netherlands!5e0!3m2!1sen!2sus!4v1687853919180!5m2!1sen!2sus"
+                width="100%"
+                height="300"
+                loading="lazy"
+                title="Roermond, Netherlands on the map"
+              ></iframe>
+            </figure>
+          </div>
 
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+        </div>
+      </section>
 
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </main>
 
-  <!-- Link to your external JavaScript file -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="./assets/js/form-handler.js"></script>
-
-</body>
-
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="./assets/js/cosmos.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="./assets/js/form-handler.js"></script>
+  </body>
 </html>
