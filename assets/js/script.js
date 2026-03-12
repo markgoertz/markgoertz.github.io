@@ -176,7 +176,8 @@ function initSkillBars() {
 function initGlowEffect() {
   const section = document.querySelector(".tech-section");
   const tags    = Array.from(document.querySelectorAll(".tech-tag"));
-  const targets = [...(section ? [section] : []), ...tags];
+  const cards   = Array.from(document.querySelectorAll(".client-card"));
+  const targets = [...(section ? [section] : []), ...tags, ...cards];
   if (!targets.length) return;
 
   // Per-element angle state (avoid closure mutation bugs)
@@ -201,7 +202,7 @@ function initGlowEffect() {
     "pointermove",
     (e) => {
       targets.forEach((el) => {
-        const isTag  = el.classList.contains("tech-tag");
+        const isTag  = el.classList.contains("tech-tag") || el.classList.contains("client-card");
         const prox   = isTag ? 4 : 80;
         const rect   = el.getBoundingClientRect();
         const cx     = rect.left + rect.width  * 0.5;

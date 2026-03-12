@@ -248,16 +248,111 @@
 
           <div class="clients-section reveal-up">
             <h3 class="subsection-title">Organizations I Worked With</h3>
-            <div class="clients-grid">
-              <a href="https://www.fontys.nl/" class="client-item" aria-label="Fontys University" target="_blank" rel="noopener">
-                <img src="./assets/images/clients/fontys.png" alt="Fontys University logo" width="80" height="40" style="object-fit:contain;display:block;background:#fff;border-radius:7px;box-shadow:0 1px 3px #0001;" onerror="this.onerror=null;this.style.background='#eee';this.style.display='inline-block';this.style.textAlign='center';this.style.lineHeight='40px';this.style.fontSize='14px';this.style.color='#333';this.style.border='1px solid #ddd';this.style.content='Fontys';this.src='';this.alt='Fontys';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=&quot;padding:0 10px;&quot;>Fontys</span>';">
-              </a>
-              <a href="https://www.stream-group.nl/" class="client-item" aria-label="Stream Group" target="_blank" rel="noopener">
-                <img src="./assets/images/clients/stream-group.png" alt="Stream Group logo" width="80" height="40" style="object-fit:contain;display:block;background:#fff;border-radius:7px;box-shadow:0 1px 3px #0001;" onerror="this.onerror=null;this.style.background='#eee';this.style.display='inline-block';this.style.textAlign='center';this.style.lineHeight='40px';this.style.fontSize='14px';this.style.color='#333';this.style.border='1px solid #ddd';this.style.content='Stream Group';this.src='';this.alt='Stream Group';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=&quot;padding:0 10px;&quot;>Stream Group</span>';">
-              </a>
-              <a href="https://www.gilde-bt.nl/" class="client-item" aria-label="Gilde-BT" target="_blank" rel="noopener">
-                <img src="./assets/images/clients/gilde-bt.png" alt="Gilde-BT logo" width="80" height="40" style="object-fit:contain;display:block;background:#fff;border-radius:7px;box-shadow:0 1px 3px #0001;" onerror="this.onerror=null;this.style.background='#eee';this.style.display='inline-block';this.style.textAlign='center';this.style.lineHeight='40px';this.style.fontSize='14px';this.style.color='#333';this.style.border='1px solid #ddd';this.style.content='Gilde-BT';this.src='';this.alt='Gilde-BT';this.parentNode.style.display='flex';this.parentNode.style.alignItems='center';this.parentNode.style.justifyContent='center';this.parentNode.innerHTML='<span style=&quot;padding:0 10px;&quot;>Gilde-BT</span>';">
-              </a>
+            <div class="clients-marquee-outer">
+              <div class="clients-marquee-track">
+
+                <!-- ── Set 1 ─────────────────────────────────────────── -->
+                <a href="https://www.iodigital.com/" class="client-card" target="_blank" rel="noopener" aria-label="iO Digital">
+                  <figure class="client-card-logo">
+                    <img src="./assets/images/io-digital.png" alt="iO Digital" loading="lazy"
+                         onerror="this.style.display='none';this.nextElementSibling.removeAttribute('hidden')">
+                    <span hidden>iO digital</span>
+                  </figure>
+                  <div class="client-card-body">
+                    <span class="client-card-name">iO Digital</span>
+                    <span class="client-card-role">AI / Software Engineer</span>
+                  </div>
+                </a>
+
+                <a href="https://www.fontys.nl/" class="client-card" target="_blank" rel="noopener" aria-label="Fontys University">
+                  <figure class="client-card-logo">
+                    <img src="./assets/images/fontys.png" alt="Fontys University" loading="lazy"
+                         onerror="this.style.display='none';this.nextElementSibling.removeAttribute('hidden')">
+                    <span hidden>Fontys</span>
+                  </figure>
+                  <div class="client-card-body">
+                    <span class="client-card-name">Fontys University</span>
+                    <span class="client-card-role">Student Researcher · AI</span>
+                  </div>
+                </a>
+
+                <a href="https://www.gilde-bt.nl/" class="client-card" target="_blank" rel="noopener" aria-label="Gilde-BT">
+                  <figure class="client-card-logo">
+                    <img src="./assets/images/gilde-bt.png" alt="Gilde-BT" loading="lazy"
+                         onerror="this.style.display='none';this.nextElementSibling.removeAttribute('hidden')">
+                    <span hidden>Gilde-BT</span>
+                  </figure>
+                  <div class="client-card-body">
+                    <span class="client-card-name">Gilde-BT</span>
+                    <span class="client-card-role">Software Engineer · Graduation</span>
+                  </div>
+                </a>
+
+                <a href="https://www.stream-group.nl/" class="client-card" target="_blank" rel="noopener" aria-label="Stream Group">
+                  <figure class="client-card-logo">
+                    <img src="./assets/images/stream-group.png" alt="Stream Group" loading="lazy"
+                         onerror="this.style.display='none';this.nextElementSibling.removeAttribute('hidden')">
+                    <span hidden>Stream Group</span>
+                  </figure>
+                  <div class="client-card-body">
+                    <span class="client-card-name">Stream Group</span>
+                    <span class="client-card-role">Software Engineer · Intern</span>
+                  </div>
+                </a>
+
+                <!-- ── Set 2 — aria-hidden duplicate for seamless loop ─ -->
+                <a href="https://www.iodigital.com/" class="client-card" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                  <figure class="client-card-logo">
+                    <img src="https://www.iodigital.com/favicons/apple-icon-blue-180x180.png" alt="" loading="lazy"
+                         onerror="this.style.display='none';this.nextElementSibling.removeAttribute('hidden')">
+                    <span hidden>iO digital</span>
+                  </figure>
+                  <div class="client-card-body">
+                    <span class="client-card-name">iO Digital</span>
+                    <span class="client-card-role">AI / Software Engineer</span>
+                  </div>
+                </a>
+
+                <a href="https://www.fontys.nl/" class="client-card" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                  <figure class="client-card-logo">
+                    <img src="./assets/images/fontys.png" alt="" loading="lazy"
+                         onerror="this.style.display='none';this.nextElementSibling.removeAttribute('hidden')">
+                    <span hidden>Fontys</span>
+                  </figure>
+                  <div class="client-card-body">
+                    <span class="client-card-name">Fontys University</span>
+                    <span class="client-card-role">Student Researcher · AI</span>
+                  </div>
+                </a>
+
+                <a href="https://www.gilde-bt.nl/" class="client-card" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                  <figure class="client-card-logo">
+                    <img src="./assets/images/gilde-bt.png" alt="" loading="lazy"
+                         onerror="this.style.display='none';this.nextElementSibling.removeAttribute('hidden')">
+                    <span hidden>Gilde-BT</span>
+                  </figure>
+                  <div class="client-card-body">
+                    <span class="client-card-name">Gilde-BT</span>
+                    <span class="client-card-role">Software Engineer · Graduation</span>
+                  </div>
+                </a>
+
+                <a href="https://www.stream-group.nl/" class="client-card" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                  <figure class="client-card-logo">
+                    <img src="./assets/images/stream-group.png" alt="" loading="lazy"
+                         onerror="this.style.display='none';this.nextElementSibling.removeAttribute('hidden')">
+                    <span hidden>Stream Group</span>
+                  </figure>
+                  <div class="client-card-body">
+                    <span class="client-card-name">Stream Group</span>
+                    <span class="client-card-role">Software Engineer · Intern</span>
+                  </div>
+                </a>
+
+              </div>
+
+              <div class="clients-fade-left"  aria-hidden="true"></div>
+              <div class="clients-fade-right" aria-hidden="true"></div>
             </div>
           </div>
 
